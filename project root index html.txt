@@ -1,0 +1,11 @@
+project-root/
+├── index.html
+├── style.css
+├── script.js
+└── assets/
+    ├── images/
+    │   ├── hero-bg.jpg
+    │   ├── logo.svg
+    │   └── diagnostic-tool.png
+    └── fonts/
+        └── (шрифты)
