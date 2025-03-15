@@ -1,7 +1,30 @@
-// Выводим сообщение в консоль
-console.log("Сайт успешно загружен!");
+// Плавная прокрутка
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-// Пример интерактивности: меняем цвет заголовка при клике
-document.querySelector("h1").addEventListener("click", function() {
-    this.style.color = "#e74c3c"; // Красный цвет
+// Анимации при скролле
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+document.querySelectorAll('.service-card, .about-content').forEach((el) => {
+    observer.observe(el);
+});
+
+// Preloader
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    preloader.style.display = 'none';
 });
