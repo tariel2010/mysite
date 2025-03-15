@@ -1,17 +1,99 @@
-/* Стили для тела страницы */
+:root {
+    --primary: #FF6B35;
+    --dark: #292F36;
+    --light: #F7FFF7;
+    --accent: #4ECDC4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f0f0f0;
+    font-family: 'Inter', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    overflow-x: hidden;
 }
 
-h1 {
-    color: #2c3e50; /* Темно-синий цвет */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('assets/images/hero-bg.jpg') center/cover;
+    color: white;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    transition: 0.4s;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
     text-align: center;
+    margin: 4rem 0;
+    font-size: 2.5rem;
+    position: relative;
 }
 
-img {
-    display: block;
-    margin: 0 auto; /* Центрируем изображение */
-    width: 200px;
+.section-title::after {
+    content: '';
+    width: 100px;
+    height: 4px;
+    background: var(--primary);
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about {
+        flex-direction: column;
+    }
 }
