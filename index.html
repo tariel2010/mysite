@@ -2,18 +2,89 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Мой первый сайт</title>
-    <!-- Подключаем CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профессиональный автоэлектрик-диагност | Тула</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <h1>Добро пожаловать на Ubuntu!</h1>
-    <p>Это пример статического сайта.</p>
-    
-    <!-- Добавим изображение -->
-    <img src="images/ubuntu-logo.png" alt="Лого Ubuntu">
-    
-    <!-- Подключаем JavaScript -->
-    <script src="js/script.js"></script>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <nav class="navbar">
+            <div class="brand">
+                <img src="assets/images/logo.svg" alt="AutoElectric Logo">
+                <span>AutoElectric</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Профессиональная диагностика электрооборудования</h1>
+            <p class="hero-subtitle">Комплексное решение проблем автомобильной электроники</p>
+            <a href="#contact" class="cta-button">Записаться онлайн</a>
+        </div>
+        
+        <div class="scroll-down">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">Наши услуги</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Диагностика</h3>
+                <p>Компьютерная диагностика электронных систем</p>
+            </div>
+            <!-- Добавьте другие сервисы -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2 class="section-title">О специалисте</h2>
+            <p>15 лет опыта работы с автомобильной электроникой...</p>
+        </div>
+        <div class="about-image">
+            <img src="assets/images/diagnostic-tool.png" alt="Оборудование">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-info">
+            <h2>Контакты</h2>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p class="address">ВАШ АДРЕС</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <p class="phone">ВАШ ТЕЛЕФОН</p>
+            </div>
+        </div>
+        <form class="contact-form">
+            <input type="text" placeholder="Имя">
+            <input type="tel" placeholder="Телефон">
+            <textarea placeholder="Сообщение"></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
